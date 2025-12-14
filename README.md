@@ -1,8 +1,6 @@
-<![CDATA[<div align="center">
-
 # 🚀 Civvi
 
-### AI-Powered Resume Builder & ATS Optimizer
+**AI-Powered Resume Builder & ATS Optimizer**
 
 [![Made with React](https://img.shields.io/badge/Made%20with-React%2019-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![Powered by Gemini](https://img.shields.io/badge/Powered%20by-Google%20Gemini-4285F4?style=for-the-badge&logo=google)](https://aistudio.google.com/)
@@ -11,51 +9,35 @@
 
 **Craft job-winning resumes with AI-powered ATS optimization. 100% free & open source.**
 
-[**✨ Live Demo**](#) • [**📖 Documentation**](#-usage) • [**🐛 Report Bug**](https://github.com/Vrun-design/Civvi/issues) • [**💡 Request Feature**](https://github.com/Vrun-design/Civvi/issues)
-
----
-
-</div>
-
-## 📸 Screenshots
-
-<div align="center">
-  <img src="https://via.placeholder.com/800x500.png?text=Landing+Page" alt="Civvi Landing Page" width="80%" />
-  <p><em>Beautiful, modern landing page with dark/light mode support</em></p>
-</div>
-
-<div align="center">
-  <img src="https://via.placeholder.com/800x500.png?text=Resume+Editor" alt="Resume Editor" width="80%" />
-  <p><em>Intuitive drag-and-drop resume editor with live preview</em></p>
-</div>
+[✨ Live Demo](#) • [📖 Documentation](#-usage) • [🐛 Report Bug](https://github.com/Vrun-design/Civvi/issues) • [💡 Request Feature](https://github.com/Vrun-design/Civvi/issues)
 
 ---
 
 ## ✨ Features
 
-### 🎨 **Modern Resume Editor**
+### 🎨 Modern Resume Editor
 - **Drag & Drop Sections** – Reorder resume sections effortlessly
 - **Live A4 Preview** – See changes in real-time as you type
 - **Multiple Templates** – Choose from professional, ATS-friendly designs
 - **Custom Sections** – Add publications, volunteering, or any custom section
 
-### 🤖 **AI-Powered Writing**
+### 🤖 AI-Powered Writing
 - **Smart Rewrite** – Enhance any bullet point or summary with one click
 - **Context-Aware** – AI understands resume-specific writing best practices
 - **Gemini 2.5 Flash** – Powered by Google's latest AI model
 
-### 📊 **ATS Optimizer**
+### 📊 ATS Optimizer
 - **Match Score** – See how well your resume matches a job description
 - **Missing Keywords** – Identify critical skills you're missing
 - **Smart Suggestions** – Get AI-rewritten content tailored to the job
 - **Weak Phrase Detection** – Find and fix generic or weak language
 
-### 📥 **Import & Export**
+### 📥 Import & Export
 - **Import PDF/DOCX** – Parse existing resumes automatically with AI
 - **Export to PDF** – Download ATS-friendly PDFs with real text (not images)
 - **Clickable Links** – Email, LinkedIn, GitHub links work in exported PDFs
 
-### 🔐 **Privacy First**
+### 🔐 Privacy First
 - **Bring Your Own Key (BYOK)** – Use your own free Gemini API key
 - **No Data Storage** – Your resume stays in your browser
 - **Open Source** – Full transparency, audit the code yourself
@@ -88,8 +70,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/civvi.git
-   cd civvi
+   git clone https://github.com/Vrun-design/Civvi.git
+   cd Civvi
    ```
 
 2. **Install dependencies**
@@ -145,7 +127,7 @@
 ## 📁 Project Structure
 
 ```
-civvi/
+Civvi/
 ├── App.tsx                 # Main application component
 ├── index.tsx               # React entry point
 ├── types.ts                # TypeScript type definitions
@@ -178,20 +160,11 @@ civvi/
 |----------|-------------|----------|
 | `API_KEY` | Your Gemini API key | No (can use BYOK instead) |
 
-### Customization
-
-#### Adding New Templates
+### Adding New Templates
 
 1. Create a new component in `components/templates/` for the HTML preview
 2. Create a matching PDF template in `services/pdf/`
 3. Register both in the template selector in `App.tsx`
-
-#### Changing Colors
-
-Modify the accent colors in the customization panel or update the default in `App.tsx`:
-```typescript
-const [accentColor, setAccentColor] = useState('#2563eb');
-```
 
 ---
 
@@ -201,12 +174,7 @@ const [accentColor, setAccentColor] = useState('#2563eb');
 npm run build
 ```
 
-This creates optimized static files in the `dist/` directory, ready for deployment to:
-- **Vercel**
-- **Netlify**
-- **GitHub Pages**
-- **Cloudflare Pages**
-- Any static hosting service
+This creates optimized static files in the `dist/` directory.
 
 ---
 
@@ -219,13 +187,6 @@ Contributions are welcome! Here's how you can help:
 3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
 4. **Push** to the branch (`git push origin feature/amazing-feature`)
 5. **Open** a Pull Request
-
-### Development Guidelines
-
-- Follow the existing code style (TypeScript, functional components)
-- Write meaningful commit messages
-- Test your changes before submitting
-- Update documentation as needed
 
 ### Ideas for Contribution
 
@@ -249,22 +210,16 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 - [Google Gemini](https://aistudio.google.com/) – For the powerful AI capabilities
 - [React PDF](https://react-pdf.org/) – For seamless PDF generation
 - [Tailwind CSS](https://tailwindcss.com/) – For the beautiful styling utilities
-- [Material Symbols](https://fonts.google.com/icons) – For the consistent iconography
 
 ---
 
 ## 💬 Support
 
-- **Issues**: [GitHub Issues](https://github.com/your-username/civvi/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/civvi/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Vrun-design/Civvi/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Vrun-design/Civvi/discussions)
 
 ---
-
-<div align="center">
 
 **Made with ❤️ by the open-source community**
 
 If you find this project useful, please consider giving it a ⭐
-
-</div>
-]]>
