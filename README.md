@@ -13,9 +13,8 @@
 
 ---
 <img width="1436" height="696" alt="Screenshot 2025-12-14 at 6 35 13 PM" src="https://github.com/user-attachments/assets/bed23aec-827f-48dd-84d7-a30df148de37" />
----
+
 <img width="1437" height="719" alt="Screenshot 2025-12-14 at 6 35 01 PM" src="https://github.com/user-attachments/assets/c0f9ba6a-00db-4e63-b3e1-deeadb940536" />
----
 
 ## ✨ Features
 
@@ -28,7 +27,7 @@
 ### 🤖 AI-Powered Writing
 - **Smart Rewrite** – Enhance any bullet point or summary with one click
 - **Context-Aware** – AI understands resume-specific writing best practices
-- **Gemini 2.5 Flash** – Powered by Google's latest AI model
+- **Gemini Models** – Powered by Google's latest AI models
 
 ### 📊 ATS Optimizer
 - **Match Score** – See how well your resume matches a job description
