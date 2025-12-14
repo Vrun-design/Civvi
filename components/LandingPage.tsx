@@ -52,7 +52,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 </div>
                 <div className="flex items-center gap-4">
                     <a
-                        href="https://github.com/google/genai-sdk-js"
+                        href="https://github.com/Vrun-design/Civvi.git"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xs font-medium"
