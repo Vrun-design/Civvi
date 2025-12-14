@@ -1,0 +1,53 @@
+{
+  "name": "civvi-resume-builder",
+  "version": "1.0.0",
+  "description": "AI-Powered Resume Builder & ATS Optimizer - Create job-winning resumes with Google Gemini AI",
+  "type": "module",
+  "license": "MIT",
+  "author": "Civvi Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vrun-design/Civvi.git"
+  },
+  "homepage": "https://github.com/Vrun-design/Civvi#readme",
+  "bugs": {
+    "url": "https://github.com/Vrun-design/Civvi/issues"
+  },
+  "keywords": [
+    "resume",
+    "resume-builder",
+    "ats",
+    "ats-optimizer",
+    "ai",
+    "gemini",
+    "google-gemini",
+    "react",
+    "typescript",
+    "pdf",
+    "job-search",
+    "career"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.27.0",
+    "@react-pdf/renderer": "^4.3.1",
+    "pako": "^2.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
