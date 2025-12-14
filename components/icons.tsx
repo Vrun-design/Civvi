@@ -23,10 +23,10 @@ export const LinkedinIcon = ({ className, style }: IconProps) => (
 
 // Brand SVG for Resume Template (PDF)
 export const LinkedinBrandIcon = ({ className, style }: IconProps) => (
-    <svg 
-    viewBox="0 0 24 24" 
-    aria-hidden="true" 
-    className={className} 
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className={className}
     fill="currentColor"
     style={style}
   >
@@ -48,7 +48,7 @@ export const LocationIcon = ({ className, style }: IconProps) => (
 );
 
 export const SparklesIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={{ ...style, fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
+  <span className={cn("material-symbols-rounded", className)} style={{ ...style, fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
 );
 
 export const SettingsIcon = ({ className, style }: IconProps) => (
@@ -72,60 +72,60 @@ export const ArrowRightIcon = ({ className, style }: IconProps) => (
 );
 
 export const UploadIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>upload_file</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>upload_file</span>
 );
 
 export const DragIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>drag_indicator</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>drag_indicator</span>
 );
 
 export const CloseIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>close</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>close</span>
 );
 
 export const AddIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>add</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>add</span>
 );
 
 export const EditIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>edit</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>edit</span>
 );
 
 export const DeleteIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>delete</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>delete</span>
 );
 
 export const RobotIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>smart_toy</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>smart_toy</span>
 );
 
 export const SunIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>light_mode</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>light_mode</span>
 );
 
 export const MoonIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>dark_mode</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>dark_mode</span>
 );
 
 export const CheckIcon = ({ className, style }: IconProps) => (
-    <span className={cn("material-symbols-rounded", className)} style={style}>check</span>
+  <span className={cn("material-symbols-rounded", className)} style={style}>check</span>
 );
 
 export const LogoIcon = ({ className, style }: IconProps) => (
-    <span 
-        className={cn("material-symbols-rounded", className)} 
-        style={{ ...style, fontVariationSettings: "'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24" }}
-    >
-        wysiwyg
-    </span>
+  <span
+    className={cn("material-symbols-rounded", className)}
+    style={{ ...style, fontVariationSettings: "'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24" }}
+  >
+    robot_2
+  </span>
 );
 
 // Brand SVG for Resume Template (PDF)
 export const GithubBrandIcon = ({ className, style }: IconProps) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    aria-hidden="true" 
-    className={className} 
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className={className}
     fill="currentColor"
     style={style}
   >

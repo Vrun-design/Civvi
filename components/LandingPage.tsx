@@ -208,24 +208,15 @@ const LandingPage: React.FC<LandingPageProps> = ({
                         {/* Template Stockholm */}
                         <div onClick={onGetStarted} className="group cursor-pointer">
                             <div className="aspect-[3/4] bg-surface rounded-2xl overflow-hidden relative shadow-sm group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-500 border border-border">
-                                <div className="absolute inset-0 p-8 opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    {/* Abstract Resume Stockholm */}
-                                    <div className="w-full h-full bg-background shadow-lg border border-border/50 p-6">
-                                        <div className="text-center mb-6">
-                                            <div className="h-4 w-1/2 bg-primary mx-auto mb-2"></div>
-                                            <div className="h-2 w-1/3 bg-zinc-300 mx-auto"></div>
-                                        </div>
-                                        <div className="space-y-4">
-                                            <div className="h-0.5 w-full bg-border"></div>
-                                            <div className="h-2 w-1/4 bg-primary"></div>
-                                            <div className="h-1.5 w-full bg-zinc-200"></div>
-                                            <div className="h-1.5 w-5/6 bg-zinc-200"></div>
-                                            <div className="h-1.5 w-full bg-zinc-200"></div>
-                                        </div>
-                                    </div>
+                                <div className="absolute inset-0 bg-surface">
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}Temp_1.png`}
+                                        alt="Modern Minimalist Template"
+                                        className="w-full h-full object-contain object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                                    />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background via-background to-transparent pt-12">
-                                    <h3 className="text-lg font-bold text-primary">Stockholm</h3>
+                                    <h3 className="text-lg font-bold text-primary">Modern Minimalist</h3>
                                     <p className="text-xs text-zinc-500">Minimalist serif. Executive & Clean.</p>
                                 </div>
                             </div>
@@ -234,28 +225,15 @@ const LandingPage: React.FC<LandingPageProps> = ({
                         {/* Template Tokyo */}
                         <div onClick={onGetStarted} className="group cursor-pointer">
                             <div className="aspect-[3/4] bg-surface rounded-2xl overflow-hidden relative shadow-sm group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-500 border border-border">
-                                <div className="absolute inset-0 p-8 opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    {/* Abstract Resume Tokyo */}
-                                    <div className="w-full h-full bg-background shadow-lg border border-border/50 p-6">
-                                        <div className="text-left mb-6">
-                                            <div className="h-8 w-1/2 bg-primary mb-2"></div>
-                                            <div className="h-2 w-full bg-accent"></div>
-                                        </div>
-                                        <div className="grid grid-cols-3 gap-2">
-                                            <div className="col-span-1 space-y-2">
-                                                <div className="h-1.5 w-full bg-zinc-300"></div>
-                                                <div className="h-1.5 w-full bg-zinc-300"></div>
-                                            </div>
-                                            <div className="col-span-2 space-y-2">
-                                                <div className="h-2 w-1/3 bg-primary"></div>
-                                                <div className="h-1.5 w-full bg-zinc-200"></div>
-                                                <div className="h-1.5 w-5/6 bg-zinc-200"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className="absolute inset-0 bg-surface">
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}Temp_2.png`}
+                                        alt="Classic Professional Template"
+                                        className="w-full h-full object-contain object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                                    />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background via-background to-transparent pt-12">
-                                    <h3 className="text-lg font-bold text-primary">Tokyo</h3>
+                                    <h3 className="text-lg font-bold text-primary">Classic Professional</h3>
                                     <p className="text-xs text-zinc-500">Bold sans-serif. Tech & Creative.</p>
                                 </div>
                             </div>
