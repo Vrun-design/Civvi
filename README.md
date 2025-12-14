@@ -13,6 +13,10 @@
 
 [**✨ Live Demo**](#) • [**📖 Documentation**](#-usage) • [**🐛 Report Bug**](https://github.com/Vrun-design/Civvi/issues) • [**💡 Request Feature**](https://github.com/Vrun-design/Civvi/issues)
 
+<img width="1438" height="707" alt="Screenshot 2025-12-14 at 6 29 56 PM" src="https://github.com/user-attachments/assets/6c38d3f0-9fbb-45d3-a750-a3ecb167886a" />
+
+<img width="1434" height="733" alt="Screenshot 2025-12-14 at 6 30 24 PM" src="https://github.com/user-attachments/assets/7618781f-8112-44e4-a1cd-5385d77d67e6" />
+
 ---
 
 </div>
