@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
+    base: '/Civvi/',
     plugins: [react()],
     define: {
       // Polyfill process.env for the existing code structure
