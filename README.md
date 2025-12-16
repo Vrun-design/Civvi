@@ -156,7 +156,7 @@ Civvi/
 │   ├── ApiKeyModal.tsx     # BYOK modal component
 │   ├── icons.tsx           # Icon components
 │   └── templates/          # HTML preview templates
-│       ├── TemplateA.tsx   # Stockholm template
+│       ├── TemplateA.tsx   # Modern template
 │       └── TemplateB.tsx   # Modern template
 ├── services/
 │   ├── geminiService.ts    # AI API integration

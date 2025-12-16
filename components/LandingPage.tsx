@@ -4,6 +4,7 @@ import {
     CloseIcon, SunIcon, MoonIcon, RobotIcon, EyeIcon, DragIcon,
     DownloadIcon, SettingsIcon, CheckIcon
 } from './icons';
+import Button from './Button';
 
 interface LandingPageProps {
     onGetStarted: () => void;
@@ -55,11 +56,11 @@ const LandingPage: React.FC<LandingPageProps> = ({
                         href="https://github.com/Vrun-design/Civvi.git"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xs font-medium"
+                        className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-surface hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xs font-medium"
                     >
                         <GithubBrandIcon className="w-4 h-4" />
                         Star on GitHub
-                    </a>
+                    </a>  {/* Kept as anchor for now as it is external link, could wrap in button style if needed but standard anchor is fine */}
                 </div>
             </nav>
 
@@ -84,19 +85,22 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                        <button
+                        <Button
                             onClick={onGetStarted}
-                            className="h-14 px-8 rounded-full bg-primary text-background font-semibold text-lg hover:opacity-90 transition-all flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_40px_rgba(255,255,255,0.25)] hover:-translate-y-1 dark:shadow-none"
+                            size="lg"
+                            className="text-lg shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_40px_rgba(255,255,255,0.25)] dark:shadow-none"
                         >
                             Build Resume
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             onClick={() => setShowScanModal(true)}
-                            className="h-14 px-8 rounded-full border border-border bg-transparent text-primary font-medium text-lg hover:bg-surface transition-colors flex items-center gap-2"
+                            variant="outline"
+                            size="lg"
+                            className="bg-transparent text-primary hover:bg-surface border-border"
+                            leftIcon={<SparklesIcon className="text-primary" />}
                         >
-                            <SparklesIcon className="text-primary" />
                             Scan & Optimize
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -205,9 +209,9 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Template Stockholm */}
+                        {/* Template Modern */}
                         <div onClick={onGetStarted} className="group cursor-pointer">
-                            <div className="aspect-[3/4] bg-surface rounded-2xl overflow-hidden relative shadow-sm group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-500 border border-border">
+                            <div className="aspect-[3/4] bg-surface rounded-2xl overflow-hidden relative shadow-sm group-hover:shadow-2xl transition-all duration-500 border border-border">
                                 <div className="absolute inset-0 bg-surface">
                                     <img
                                         src={`${import.meta.env.BASE_URL}Temp_1.png`}
@@ -216,24 +220,24 @@ const LandingPage: React.FC<LandingPageProps> = ({
                                     />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background via-background to-transparent pt-12">
-                                    <h3 className="text-lg font-bold text-primary">Modern Minimalist</h3>
+                                    <h3 className="text-lg font-bold text-primary">Modern</h3>
                                     <p className="text-xs text-zinc-500">Minimalist serif. Executive & Clean.</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Template Tokyo */}
+                        {/* Template Professional */}
                         <div onClick={onGetStarted} className="group cursor-pointer">
-                            <div className="aspect-[3/4] bg-surface rounded-2xl overflow-hidden relative shadow-sm group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-500 border border-border">
+                            <div className="aspect-[3/4] bg-surface rounded-2xl overflow-hidden relative shadow-sm group-hover:shadow-2xl transition-all duration-500 border border-border">
                                 <div className="absolute inset-0 bg-surface">
                                     <img
                                         src={`${import.meta.env.BASE_URL}Temp_2.png`}
-                                        alt="Classic Professional Template"
+                                        alt="Professional Template"
                                         className="w-full h-full object-contain object-top opacity-90 group-hover:opacity-100 transition-opacity"
                                     />
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background via-background to-transparent pt-12">
-                                    <h3 className="text-lg font-bold text-primary">Classic Professional</h3>
+                                    <h3 className="text-lg font-bold text-primary">Professional</h3>
                                     <p className="text-xs text-zinc-500">Bold sans-serif. Tech & Creative.</p>
                                 </div>
                             </div>
@@ -245,7 +249,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                                 <div className="w-12 h-12 rounded-full bg-background border border-border flex items-center justify-center mb-4 shadow-sm">
                                     <SparklesIcon className="text-zinc-400" />
                                 </div>
-                                <h3 className="text-sm font-semibold text-primary">Berlin & NYC</h3>
+                                <h3 className="text-sm font-semibold text-primary">Upcoming Styles</h3>
                                 <p className="text-xs text-zinc-500 mt-2 max-w-[160px] leading-relaxed">
                                     Engineering and creative focused templates coming soon.
                                 </p>
@@ -264,12 +268,13 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     <p className="text-lg text-zinc-500 mb-10">
                         Join thousands of professionals securing interviews with Civvi.
                     </p>
-                    <button
+                    <Button
                         onClick={onGetStarted}
-                        className="h-12 px-8 rounded-full bg-primary text-background font-semibold text-sm hover:opacity-90 transition-all shadow-lg"
+                        size="lg"
+                        className="text-sm shadow-lg"
                     >
                         Start Building Now
-                    </button>
+                    </Button>
                 </div>
             </section>
 
@@ -278,12 +283,15 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 <div className="max-w-7xl mx-auto flex flex-row items-center justify-between">
                     <p className="text-xs text-zinc-500 font-mono">Civvi © 2025.</p>
 
-                    <button
+                    <Button
                         onClick={onToggleTheme}
-                        className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-border bg-background hover:bg-surface transition-colors text-xs font-medium text-zinc-500 hover:text-primary"
+                        variant="outline"
+                        size="sm"
+                        className="bg-background text-zinc-500 hover:text-primary"
+                        leftIcon={theme === 'dark' ? <SunIcon className="text-[14px]" /> : <MoonIcon className="text-[14px]" />}
                     >
-                        {theme === 'dark' ? <><SunIcon className="text-[14px]" /> Light</> : <><MoonIcon className="text-[14px]" /> Dark</>}
-                    </button>
+                        {theme === 'dark' ? 'Light' : 'Dark'}
+                    </Button>
                 </div>
             </footer>
 
@@ -297,9 +305,9 @@ const LandingPage: React.FC<LandingPageProps> = ({
                                 <h2 className="text-xl font-bold text-primary">ATS Intelligence Scanner</h2>
                                 <p className="text-sm text-zinc-500">Upload your CV and the Job Description to get a match score.</p>
                             </div>
-                            <button onClick={() => setShowScanModal(false)} className="text-zinc-500 hover:text-primary transition-colors">
+                            <Button onClick={() => setShowScanModal(false)} variant="ghost" size="icon" className="text-zinc-500 hover:text-primary">
                                 <CloseIcon className="text-[24px]" />
-                            </button>
+                            </Button>
                         </div>
 
                         {/* Modal Content */}
@@ -344,29 +352,23 @@ const LandingPage: React.FC<LandingPageProps> = ({
 
                         {/* Modal Footer */}
                         <div className="p-6 border-t border-border bg-surface/50 flex justify-end gap-3">
-                            <button
+                            <Button
                                 onClick={() => setShowScanModal(false)}
                                 disabled={isProcessing}
-                                className="px-6 py-3 rounded-lg text-sm font-medium text-zinc-500 hover:text-primary hover:bg-input transition-colors"
+                                variant="ghost"
+                                className="text-zinc-500 hover:text-primary hover:bg-input"
                             >
                                 Cancel
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 onClick={handleScanSubmit}
                                 disabled={!selectedFile || !jobDescription || isProcessing}
-                                className={`px-8 py-3 rounded-lg text-sm font-bold bg-primary text-background hover:opacity-90 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg relative overflow-hidden ${isProcessing ? 'cursor-wait' : ''}`}
+                                isLoading={isProcessing}
+                                className="px-8 shadow-lg relative overflow-hidden"
+                                rightIcon={!isProcessing && <ArrowRightIcon />}
                             >
-                                {isProcessing ? (
-                                    <>
-                                        <div className="absolute inset-0 bg-white/20 animate-[shimmer_2s_infinite]"></div>
-                                        <span className="animate-spin">⟳</span> Processing...
-                                    </>
-                                ) : (
-                                    <>
-                                        Run Analysis <ArrowRightIcon />
-                                    </>
-                                )}
-                            </button>
+                                {isProcessing ? 'Processing...' : 'Run Analysis'}
+                            </Button>
                         </div>
                     </div>
                 </div>

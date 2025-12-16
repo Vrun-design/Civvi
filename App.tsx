@@ -5,6 +5,7 @@ import ResumePreview from './components/ResumePreview';
 import AtsOptimizer from './components/AtsOptimizer';
 import LandingPage from './components/LandingPage';
 import ApiKeyModal from './components/ApiKeyModal';
+import Button from './components/Button';
 import { parseResumeFromFile, parseResumeFromText, analyzeWithATS, hasApiKey } from './services/geminiService';
 import {
     SettingsIcon, DownloadIcon, ArrowLeftIcon, ArrowRightIcon,
@@ -485,31 +486,38 @@ const App: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <button
+                    <Button
                         onClick={toggleTheme}
-                        className="p-2 rounded-md hover:bg-input text-zinc-500 hover:text-primary transition-colors md:hidden"
+                        variant="ghost"
+                        size="icon"
+                        className="md:hidden text-zinc-500 hover:text-primary"
                     >
                         {theme === 'dark' ? <SunIcon className="text-[20px]" /> : <MoonIcon className="text-[20px]" />}
-                    </button>
+                    </Button>
 
                     {error && <span className="text-red-500 text-xs font-medium mr-2">{error}</span>}
                     <input type="file" ref={fileInputRef} onChange={handleFileImport} className="hidden" accept=".pdf,.docx,image/png,image/jpeg" />
-                    <button
+                    <Button
                         onClick={() => fileInputRef.current?.click()}
                         disabled={isLoading}
-                        className="hidden sm:flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-zinc-400 hover:text-primary transition-colors border border-border rounded-md hover:border-zinc-500 hover:bg-input"
+                        variant="outline"
+                        size="sm"
+                        isLoading={isLoading}
+                        className="hidden sm:flex border-border text-zinc-400 hover:text-primary hover:border-zinc-500 hover:bg-input"
+                        leftIcon={<UploadIcon className="text-[18px]" />}
                     >
-                        {isLoading ? <span className="animate-spin">⟳</span> : <UploadIcon className="text-[18px]" />}
                         Import
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={handleExportPdf}
                         disabled={isLoading}
-                        className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium bg-primary text-background rounded-md hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.1)] disabled:opacity-50 disabled:cursor-not-allowed"
+                        isLoading={isLoading}
+                        size="sm"
+                        className="shadow-[0_0_15px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                        leftIcon={<DownloadIcon className="text-[18px]" />}
                     >
-                        {isLoading ? <span className="animate-spin">⟳</span> : <DownloadIcon className="text-[18px]" />}
                         Export PDF
-                    </button>
+                    </Button>
                 </div>
             </header>
 
@@ -520,18 +528,24 @@ const App: React.FC = () => {
                 <aside className="w-64 bg-surface border-r border-border flex flex-col hidden md:flex no-print">
                     <div className="p-4 border-b border-border">
                         <div className="flex gap-1 p-1 bg-input rounded-lg border border-border">
-                            <button
+                            <Button
                                 onClick={() => setEditorView('editor')}
-                                className={`flex-1 py-1.5 text-xs font-medium rounded-md text-center transition-all ${editorView === 'editor' ? 'bg-secondary text-primary shadow-sm' : 'text-zinc-500 hover:text-zinc-400'}`}
+                                variant={editorView === 'editor' ? 'secondary' : 'ghost'}
+                                size="sm"
+                                rounded="md"
+                                className={`flex-1 py-1.5 text-xs ${editorView === 'editor' ? 'bg-secondary text-primary shadow-sm' : 'text-zinc-500 hover:text-zinc-400 hover:bg-transparent'}`}
                             >
                                 Editor
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 onClick={() => setEditorView('ats')}
-                                className={`flex-1 py-1.5 text-xs font-medium rounded-md text-center transition-all ${editorView === 'ats' ? 'bg-secondary text-primary shadow-sm' : 'text-zinc-500 hover:text-zinc-400'}`}
+                                variant={editorView === 'ats' ? 'secondary' : 'ghost'}
+                                size="sm"
+                                rounded="md"
+                                className={`flex-1 py-1.5 text-xs ${editorView === 'ats' ? 'bg-secondary text-primary shadow-sm' : 'text-zinc-500 hover:text-zinc-400 hover:bg-transparent'}`}
                             >
                                 Optimizer
-                            </button>
+                            </Button>
                         </div>
                     </div>
 
@@ -585,7 +599,7 @@ const App: React.FC = () => {
 
                                             {/* Actions */}
                                             <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
-                                                <button
+                                                <Button
                                                     // IMPORTANT: Stop propagation and prevent default to allow click to pass through draggable parent
                                                     onMouseDown={(e) => { e.stopPropagation(); e.preventDefault(); }}
                                                     onClick={(e) => {
@@ -593,23 +607,26 @@ const App: React.FC = () => {
                                                         e.preventDefault();
                                                         handleDeleteSection(sectionKey);
                                                     }}
-                                                    className="text-zinc-400 hover:text-red-500 p-1.5 rounded-md hover:bg-red-500/10 opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-10"
+                                                    variant="ghost"
+                                                    size="icon"
+                                                    className="w-6 h-6 text-zinc-400 hover:text-red-500 hover:bg-red-500/10 opacity-0 group-hover:opacity-100 transition-all cursor-pointer z-10"
                                                     title="Remove Section"
                                                 >
                                                     <DeleteIcon className="text-[16px]" />
-                                                </button>
+                                                </Button>
                                             </div>
                                         </div>
                                     );
                                 })}
 
-                                <button
+                                <Button
                                     onClick={() => setShowAddSectionModal(true)}
-                                    className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-zinc-500 hover:text-primary hover:bg-input flex items-center gap-3 mt-4 transition-colors"
+                                    variant="ghost"
+                                    className="w-full justify-start px-3 py-2 rounded-md text-sm font-medium text-zinc-500 hover:text-primary hover:bg-input mt-4 transition-colors"
+                                    leftIcon={<AddIcon className="text-[16px]" />}
                                 >
-                                    <span className="w-4 h-4 flex items-center justify-center"><AddIcon className="text-[16px]" /></span>
                                     Add Section
-                                </button>
+                                </Button>
                             </>
                         ) : (
                             <div className="px-3 py-4 text-sm text-zinc-500 leading-relaxed">
@@ -620,12 +637,14 @@ const App: React.FC = () => {
 
                     {/* Sidebar Footer */}
                     <div className="p-4 border-t border-border">
-                        <button
+                        <Button
                             onClick={toggleTheme}
-                            className="w-full flex items-center justify-center gap-2 p-2 rounded-md hover:bg-input text-zinc-500 hover:text-primary transition-colors text-sm font-medium"
+                            variant="ghost"
+                            className="w-full justify-center gap-2 p-2 rounded-md hover:bg-input text-zinc-500 hover:text-primary transition-colors text-sm font-medium"
+                            leftIcon={theme === 'dark' ? <SunIcon className="text-[18px]" /> : <MoonIcon className="text-[18px]" />}
                         >
-                            {theme === 'dark' ? <><SunIcon className="text-[18px]" /> Light Mode</> : <><MoonIcon className="text-[18px]" /> Dark Mode</>}
-                        </button>
+                            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                        </Button>
                     </div>
                 </aside>
 
@@ -659,7 +678,7 @@ const App: React.FC = () => {
                                 </div>
                             )}
                         </div>
-                        <div className="h-20"></div>
+                        <div className="h-8"></div>
                     </div>
                 </main>
 
@@ -667,12 +686,14 @@ const App: React.FC = () => {
                 <aside className="w-[45%] xl:w-[40%] bg-surface border-l border-border hidden lg:flex flex-col relative transition-colors duration-300 print-preview-container">
                     <div className="h-12 border-b border-border flex items-center justify-between px-4 bg-surface/50 backdrop-blur-sm z-10 absolute top-0 w-full no-print">
                         <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Live Preview</span>
-                        <button
+                        <Button
                             onClick={() => setShowCustomize(!showCustomize)}
-                            className={`p-1.5 rounded transition-colors ${showCustomize ? 'bg-input text-primary' : 'text-zinc-400 hover:text-primary'}`}
+                            variant="ghost"
+                            size="icon"
+                            className={`rounded transition-colors ${showCustomize ? 'bg-input text-primary' : 'text-zinc-400 hover:text-primary'}`}
                         >
                             <SettingsIcon className="text-[20px]" />
-                        </button>
+                        </Button>
                     </div>
 
                     {showCustomize && (
@@ -681,18 +702,22 @@ const App: React.FC = () => {
                             <div>
                                 <label className="text-xs font-medium text-zinc-400 block mb-2">Template</label>
                                 <div className="grid grid-cols-2 gap-2">
-                                    <button
+                                    <Button
                                         onClick={() => setTemplate('TemplateA')}
+                                        variant="outline"
+                                        size="sm"
                                         className={`px-3 py-2 text-xs rounded border transition-all ${template === 'TemplateA' ? 'border-accent bg-accent/10 text-primary' : 'border-border text-zinc-500 hover:border-zinc-400'}`}
                                     >
-                                        Stockholm
-                                    </button>
-                                    <button
+                                        Modern
+                                    </Button>
+                                    <Button
                                         onClick={() => setTemplate('TemplateB')}
+                                        variant="outline"
+                                        size="sm"
                                         className={`px-3 py-2 text-xs rounded border transition-all ${template === 'TemplateB' ? 'border-accent bg-accent/10 text-primary' : 'border-border text-zinc-500 hover:border-zinc-400'}`}
                                     >
-                                        Tokyo
-                                    </button>
+                                        Professional
+                                    </Button>
                                 </div>
                             </div>
                             <div>
@@ -737,7 +762,7 @@ const App: React.FC = () => {
                     <div className="bg-surface border border-border rounded-xl shadow-2xl p-6 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-lg font-semibold text-primary">Add Section</h2>
-                            <button onClick={() => setShowAddSectionModal(false)} className="text-zinc-500 hover:text-primary"><CloseIcon className="text-[20px]" /></button>
+                            <Button onClick={() => setShowAddSectionModal(false)} variant="ghost" size="icon" className="text-zinc-500 hover:text-primary"><CloseIcon className="text-[20px]" /></Button>
                         </div>
 
                         {availableSections.length > 0 && (
@@ -779,7 +804,7 @@ const App: React.FC = () => {
                                 />
                                 <button type="submit" className="bg-primary text-background px-4 py-2 rounded-md text-sm font-medium hover:opacity-90">
                                     Create
-                                </button>
+                                </button> {/* Kept native for form submission simplicity for now, or replace if needed but Button handles type? Button defaults to button type so need to pass type='submit' */}
                             </form>
                         </div>
                     </div>
